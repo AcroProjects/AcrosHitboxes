@@ -48,9 +48,13 @@ Calculates the launch vector to apply knockback
 Parameters:
  - **angle**: launch_angle
  - **strength**: length and width of the vector
+
 Returns:
  - Vector to apply knockback
 
+# Showcase Video
+<a href="https://youtu.be/oEvrNoqFXC0" target="_blank"><img height="137" width="250" src="https://i9.ytimg.com/vi/oEvrNoqFXC0/mqdefault.jpg?v=61f0600b&sqp=CMzCwY8G&rs=AOn4CLC6IdRXSVHiOxRc5bfXmjHeKyJl_A" alt="Acro's Hitboxes Showcase" width="150" ></a>
+<br>
 
 # Support the project development
 <a href="https://ko-fi.com/acroprojects" target="_blank"><img height="137" width="250" src="https://cdn.ko-fi.com/cdn/useruploads/e26b0e38-3146-41f0-aa23-7f522973b5c0.png" alt="Donate On Kofi" width="150" ></a>
