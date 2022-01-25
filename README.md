@@ -53,7 +53,7 @@ Returns:
 
 
 # Support the project development
-<a href="https://ko-fi.com/acroprojectss" target="_blank"><img height="137" width="250" src="https://cdn.ko-fi.com/cdn/useruploads/e26b0e38-3146-41f0-aa23-7f522973b5c0.png" alt="Donate On Kofi" width="150" ></a>
+<a href="https://ko-fi.com/acroprojects" target="_blank"><img height="137" width="250" src="https://cdn.ko-fi.com/cdn/useruploads/e26b0e38-3146-41f0-aa23-7f522973b5c0.png" alt="Donate On Kofi" width="150" ></a>
 <br>
 
 # License
