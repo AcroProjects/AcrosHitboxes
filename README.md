@@ -58,7 +58,7 @@ Returns:
 
 # License
 
- - This is currently under the MIT, however, I (Austin Molina) have the legal right to change/modify the license if I conclude that the MIT License for **Acro's Hitboxes** is being abused by potentially harmful projects (Examples: Games that target a certain group of people, games that are political properganda, Games that use NFTs or any other high energy used cyrto-tech, etc).
+ - This is currently under the MIT, however, I (Austin Molina) have the legal right to change/modify the license if I conclude that the MIT License for **Acro's Hitboxes** is being abused by potentially harmful projects (Examples: Games that target a certain group of people, games that are political propaganda, Games that use NFTs or any other high energy used cyrto-tech, etc).
 
 MIT License
 
