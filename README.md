@@ -53,7 +53,7 @@ Returns:
  - Vector to apply knockback
 
 # Showcase Video
-<a href="https://youtu.be/oEvrNoqFXC0" target="_blank"><img height="137" width="250" src="https://i9.ytimg.com/vi/oEvrNoqFXC0/mqdefault.jpg?v=61f0600b&sqp=CMzCwY8G&rs=AOn4CLC6IdRXSVHiOxRc5bfXmjHeKyJl_A" alt="Acro's Hitboxes Showcase" width="150" ></a>
+<a href="https://youtu.be/oEvrNoqFXC0" target="_blank"><img height="137" width="240" src="https://i.imgur.com/ebu0L3R.png" alt="Acro's Hitboxes Showcase" width="150" ></a>
 <br>
 
 # Support the project development
