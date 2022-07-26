@@ -1,4 +1,4 @@
-# Acro's Hitboxes
+# Acro's Hitboxes v1.2
 
 Acro’s Hitboxes aim to streamline the process of generating knockback and damage from collision.  This addon provides custom nodes that allow the user to apply knockback and damage to an object by changing the trajectory and strength of the knockback, allowing the user to visually see the launch angle and strength to reduce the amount of trial and error from traditional knockback methods, modify the length, width, and color of the hitbox, as well as enabling and disabling the hitbox.
 
@@ -7,6 +7,9 @@ Acro’s Hitboxes aim to streamline the process of generating knockback and dama
 Copy `addons/acro_hitboxes` into your project (final path should be `res://addons/acro_hitboxes`). Open the Godot Editor, go to **Project Settings > Plugins** and enable the **Acro's Hitbox** plugin and click **Update**. You can now add a **Hitbox** node to a scene.
 
 # Variables
+
+## shape (Shape2D)
+This variable can affects collision shape of the hitbox
 
 ## launch_angle (int)
 This variable will determine where an object will be launched if it is in contact with the hitbox
@@ -17,14 +20,11 @@ This variable will determine how far an object will be launch, which is properly
 ## damage (int)
 This variable can be used to return the amount of damage an object will take if it gets hit by a certain attack
 
+## hit_stun (float,EXP,0.001,4096,.02)
+This variable returns a float that can be used for the hit stun of the hitbox.  This variable is very similar to the "Timer" object
+
 ## knockback_scale (float, 0,1)
 This variable returns a float from 0 to 1 and is only used for advance calculations, such as if the user wants the amount of knockback an object to receive based on the amount of damage it has already taken
-
-## scale_x (int)
-This variable can affects the width of the hitbox
-
-## scale_y (int)
-This variable can affects the height of the hitbox
 
 ## disabled (bool)
 This variable works like the collisionshape2d button does (enables and disables the collision)
@@ -43,10 +43,16 @@ This variable can change the color of the hitbox.  Keep in mind, if the color of
 
 # Methods
 
-## get_launch_vector (int angle, int strength)
-Calculates the launch vector to apply knockback
+## get_launch_vector ()
+Calculates the launch vector to apply knockback automatically (without parameters)
+
+Returns:
+ - Vector to apply knockback
+
+## get_launch_vector (int launch_angle, int strength)
+Calculates the launch vector to apply knockback manually (with parameters)
 Parameters:
- - **angle**: launch_angle
+ - **launch_angle**: launch_angle
  - **strength**: length and width of the vector
 
 Returns:

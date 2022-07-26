@@ -1,12 +1,13 @@
 tool
+class_name Hitbox
 extends Area2D
 
+export(Shape2D) var shape = null setget update_shape
 export(int) var launch_angle setget update_la
 export(int) var strength setget update_st
 export(int) var damage setget update_da
+export(float,EXP,0.001,4096,.02) var hit_stun = 1 setget update_hs
 export(float, 0,1) var knockback_scale = 1 setget update_kb
-export(int) var scale_x = 10 setget update_x
-export(int) var scale_y = 10 setget update_y
 export(bool) var disabled = false setget update_en
 export(bool) var reversed = false setget reverseLaunchAngle
 export(int) var lineThickness = 1 setget update_lt
@@ -18,15 +19,18 @@ export(Color, RGBA) var hitbox_color = Color(1,0,0,1) setget update_co
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var shape = RectangleShape2D.new()
-	
-	#shape.set_radius(radius)
 	var collision = CollisionShape2D.new()
-	collision.set_shape(shape)
-	collision.shape.extents = Vector2(scale_x,scale_y)
 	collision.modulate = hitbox_color
+	collision.set_shape(shape)
 	add_child(collision)
 	
+
+# Updates the collision shape of the hitbox
+func update_shape(newVal):
+	shape = newVal
+	for collision in get_children():
+		collision.set_shape(newVal)
+	update()
 
 # Updates the launch_angle of the hitbox
 func update_la(newVal):
@@ -43,23 +47,14 @@ func update_da(newVal):
 	damage = newVal
 	update()
 
+# Updates the hit stun of the hitbox
+func update_hs(newVal):
+	hit_stun = newVal
+	update()
+
 # Updates the knockback scale of the hitbox
 func update_kb(newVal):
 	knockback_scale = newVal
-	update()
-
-# Updates the x scale of the hitbox
-func update_x(newVal):
-	for obj in get_children():
-		obj.shape.extents.x = newVal
-	scale_x = newVal
-	update()
-
-# Updates the x scale of the hitbox
-func update_y(newVal):
-	for obj in get_children():
-		obj.shape.extents.y = newVal
-	scale_y = newVal
 	update()
 
 # Enables and disables the hitbox
@@ -90,17 +85,34 @@ func update_vl(newVal):
 	update()
 	
 
-# Calculates the launch vector to apply knockback
+# Calculates the launch vector to apply knockback automatically
+# @returns Vector to apply knockback
+func return_launch_vector():
+	#Converts angle to radians
+	launch_angle = launch_angle * PI / 180
+	
+	#Get X and Y components of vector
+	var fx = strength * cos(launch_angle)
+	var fy = -strength * sin(launch_angle)
+	
+	#Returns the vector of fx and fy
+	match reversed:
+		true:
+			return Vector2(fx*-1,fy)
+		false:
+			return Vector2(fx,fy)
+
+# Calculates the launch vector to apply knockback manually
 # @param angle - launch_angle (int)
 # @param strength - length and width of the vector (int)
 # @returns Vector to apply knockback
-func get_launch_vector(angle,strength):
+func get_launch_vector(launch_angle,strength):
 	#Converts angle to radians
-	angle = angle * PI / 180
+	launch_angle = launch_angle * PI / 180
 	
 	#Get X and Y components of vector
-	var fx = strength * cos(angle)
-	var fy = -strength * sin(angle)
+	var fx = strength * cos(launch_angle)
+	var fy = -strength * sin(launch_angle)
 	
 	#Returns the vector of fx and fy
 	match reversed:
