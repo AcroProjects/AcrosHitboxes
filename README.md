@@ -20,7 +20,7 @@ This variable will determine how far an object will be launch, which is properly
 ## damage (int)
 This variable can be used to return the amount of damage an object will take if it gets hit by a certain attack
 
-## hit_stun (float,EXP,0.001,4096,.02)
+## hit_stun (float,EXP, 0.001, 4096, .02)
 This variable returns a float that can be used for the hit stun of the hitbox.  This variable is very similar to the "Timer" object
 
 ## knockback_scale (float, 0,1)
